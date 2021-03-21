@@ -79,7 +79,7 @@ class FlutterBlue {
       setLogLevel(logLevel);
     }
   }
-
+void reset() async { await _methodStreamController?.close(); _methodStreamController = StreamController.broadcast(); }
   /// Starts a scan for Bluetooth Low Energy devices and returns a stream
   /// of the [ScanResult] results as they are received.
   ///
